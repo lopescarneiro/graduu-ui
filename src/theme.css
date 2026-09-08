@@ -1,0 +1,83 @@
+/* ============================================================================
+   @graduu/ui — tema e tokens da suíte Graduu
+   ----------------------------------------------------------------------------
+   Marca ÚNICA (roxo de ação + navy de estrutura + assinatura roxo→magenta).
+   Verde é reservado só para o estado de SUCESSO. Claro e escuro derivam do
+   mesmo conjunto de tokens — trocar a marca inteira é trocar `--brand`.
+
+   USO no app (globals.css), logo após `@import "tailwindcss";`:
+       @import "@graduu/ui/theme.css";
+       @source "../node_modules/@graduu/ui";   (garante o scan das classes)
+   Dark mode: os apps usam next-themes (classe `.dark` no <html>).
+   Fonte: defina --font-montserrat via next/font (já é padrão na suíte).
+   ============================================================================ */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* superfícies / texto — canvas frio com viés navy */
+  --bg: #EFF3F9;      --canvas2: #E7ECF6;   --card: #FFFFFF;   --elev: #FFFFFF;
+  --ink: #0E1626;     --ink2: #3B4763;      --muted: #6C7791;
+  --line: #E3E8F1;    --line2: #D2DAE8;
+  /* marca */
+  --brand: #8322C7;   --brand-soft: #B537D6; --brand-tint: #F3E7FC; --on-brand: #FFFFFF;
+  --navy: #142B59;    --magenta: #C1479E;
+  /* estado (separado do acento) — verde só vive aqui, como sucesso */
+  --success: #0F7A45; --success-tint: #E7F5EE;
+  --warn: #B45309;    --warn-tint: #FBF0E1;
+  --danger: #C62B2B;  --danger-tint: #FBEAEA;
+  --info: #1E4F9C;    --info-tint: #E8EEFB;
+  /* forma */
+  --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-card: 20px; --r-pill: 999px;
+  --sh-sm: 0 1px 2px rgba(16,29,54,.06), 0 1px 1px rgba(16,29,54,.04);
+  --sh-md: 0 4px 16px rgba(16,29,54,.08), 0 1px 3px rgba(16,29,54,.05);
+  --sh-lg: 0 18px 46px -12px rgba(16,29,54,.22), 0 4px 12px rgba(16,29,54,.08);
+  --grad: linear-gradient(100deg, #8322C7 0%, #B01FB0 48%, #E0559E 100%);
+}
+
+.dark {
+  --bg: #0A101E;      --canvas2: #0D1524;   --card: #121B2E;   --elev: #16223A;
+  --ink: #EAEEF7;     --ink2: #AEB9D1;      --muted: #7E8CAA;
+  --line: rgba(255,255,255,.09); --line2: rgba(255,255,255,.15);
+  --brand: #C77DFF;   --brand-soft: #D98FE8; --brand-tint: rgba(199,125,255,.16); --on-brand: #24093B;
+  --navy: #8AA6DE;    --magenta: #E879C7;
+  --success: #34D07E; --success-tint: rgba(52,208,126,.14);
+  --warn: #E7A54B;    --warn-tint: rgba(231,165,75,.14);
+  --danger: #F0716E;  --danger-tint: rgba(240,113,110,.14);
+  --info: #7CA0E8;    --info-tint: rgba(124,160,232,.14);
+  --sh-sm: 0 1px 2px rgba(0,0,0,.4);
+  --sh-md: 0 6px 20px rgba(0,0,0,.45);
+  --sh-lg: 0 22px 50px -12px rgba(0,0,0,.6);
+}
+
+/* Expõe os tokens como utilitários do Tailwind v4 (bg-brand, text-ink, …) */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-canvas2: var(--canvas2);
+  --color-card: var(--card);
+  --color-elev: var(--elev);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line2: var(--line2);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-tint: var(--brand-tint);
+  --color-on-brand: var(--on-brand);
+  --color-navy: var(--navy);
+  --color-magenta: var(--magenta);
+  --color-success: var(--success);
+  --color-success-tint: var(--success-tint);
+  --color-warn: var(--warn);
+  --color-warn-tint: var(--warn-tint);
+  --color-danger: var(--danger);
+  --color-danger-tint: var(--danger-tint);
+  --color-info: var(--info);
+  --color-info-tint: var(--info-tint);
+  --radius-sm: var(--r-sm);
+  --radius: var(--r);
+  --radius-lg: var(--r-lg);
+  --radius-card: var(--r-card);
+  --font-sans: var(--font-montserrat, "Montserrat", -apple-system, "Segoe UI", Roboto, sans-serif);
+}
