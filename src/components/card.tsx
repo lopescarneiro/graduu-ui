@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../lib/cn.ts";
+import { cn } from "../lib/cn";
 
 /** Superfície elevada. A borda/sombra dizem "objeto separado" — use por papel. */
 export function Card({ className, ...props }: React.ComponentProps<"div">) {

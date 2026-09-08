@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/cn.ts";
+import { cn } from "../lib/cn";
 
 /**
  * Botão da suíte. Base UI por baixo (acessível; aceita `render` para virar link:

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../lib/cn.ts";
+import { cn } from "../lib/cn";
 
 /** Pílula de estado. `tone` semântico; `dot` mostra o pontinho de status. */
 export const badgeVariants = cva(

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../lib/cn.ts";
+import { cn } from "../lib/cn";
 
 /** Classes do input, reaproveitáveis em <textarea>/<select> ou inputs com ícone. */
 export const inputClasses =
