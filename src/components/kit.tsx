@@ -147,12 +147,15 @@ export function StatCard({
   delta,
   trend = "up",
   spark,
+  hint,
 }: {
   label: string;
   value: string;
   delta?: string;
   trend?: "up" | "down";
   spark?: number[];
+  /** Subtítulo neutro (sem seta/cor de tendência) — ex.: "70% dos leads viraram matrícula". */
+  hint?: string;
 }) {
   return (
     <div className="flex flex-col gap-2 rounded-[var(--r-lg)] border border-line bg-card p-5 shadow-[var(--sh-sm)]">
@@ -166,6 +169,7 @@ export function StatCard({
           {trend === "down" ? "▼" : "▲"} {delta}
         </p>
       )}
+      {hint && <p className="text-xs text-muted">{hint}</p>}
     </div>
   );
 }
